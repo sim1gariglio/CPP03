@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:05:24 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:51:04 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 12:01:13 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ Fragtrap::Fragtrap(std::string name) : Claptrap(name)
 	this->_hitPoints = F_HP;
 	this->_energyPoints = F_EP;
 	this->_attackDamage = F_AD;
-	std::cout << name << " has been created!" << std::endl;
+	std::cout << "Fragtrap " << name << " has been created!" << std::endl;
 }
 
 Fragtrap::Fragtrap(const Fragtrap& src) : Claptrap(src)
 {
 	*this = src;
-	std::cout << getName() << " has been created!" << std::endl;
+	std::cout << "Fragtrap " << getName() << " has been created!" << std::endl;
 }
 
 Fragtrap &	Fragtrap::operator=(const Fragtrap& rhs)
@@ -41,7 +41,7 @@ Fragtrap &	Fragtrap::operator=(const Fragtrap& rhs)
 
 Fragtrap::~Fragtrap(void)
 {
-	std::cout << getName() << " has been destroyed!" << std::endl;
+	std::cout << "Fragtrap " << getName() << " has been destroyed!" << std::endl;
 }
 
 void		Fragtrap::highFivesGuys(void)

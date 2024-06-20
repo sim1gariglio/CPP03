@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:37 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 10:54:52 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:58:00 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,23 @@ std::string	Claptrap::getName(void) const
 void	Claptrap::takeDamage(unsigned int amount)
 {
 	_hitPoints -= amount;
-	std::cout << RED << "Claptrap " << getName() << " took " << amount << " damage!" << std::endl;
+	std::cout << RED << getName() << " took " << amount << " damage!" << std::endl;
 	if (_hitPoints <= 0)
-		std::cout << "Claptrap " << getName() << " has no HP left!" << RESET << std::endl;
+		std::cout << getName() << " has no HP left!" << RESET << std::endl;
 	else 
-		std::cout << "Claptrap " << getName() << " has " << getHitPoints() << " HP left!" << RESET << std::endl;
+		std::cout << getName() << " has " << getHitPoints() << " HP left!" << RESET << std::endl;
 }
 
 void	Claptrap::beRepaired(const unsigned int amount)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no HP left!" << std::endl;
+		std::cout << getName() << " has no HP left!" << std::endl;
 		return;
 	}
 	if (getEnergyPoints() == 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no energy left!" << std::endl;
+		std::cout << getName() << " has no energy left!" << std::endl;
 		return;
 	}
 	_energyPoints--;
@@ -91,41 +91,41 @@ void	Claptrap::beRepaired(const unsigned int amount)
 	_hitPoints += amount;
 	if (getHitPoints() > HP)
 		_hitPoints = HP;
-	std::cout << GREEN << "Claptrap " << getName() << " has been repaired by " << _hitPoints - old << " HP!" << std::endl;
-	std::cout << "Claptrap " << getName() << " has " << getHitPoints() << " HP!" << RESET <<std::endl;
+	std::cout << GREEN << getName() << " has been repaired by " << _hitPoints - old << " HP!" << std::endl;
+	std::cout << getName() << " has " << getHitPoints() << " HP!" << RESET <<std::endl;
 	if (getHitPoints() == HP)
-		std::cout << GREEN << "Claptrap " << getName() << " has full HP!" << RESET << std::endl;
+		std::cout << GREEN << getName() << " has full HP!" << RESET << std::endl;
 }
 
 void Claptrap::attack(std::string const & target)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no HP left!" << std::endl;
+		std::cout << getName() << " has no HP left!" << std::endl;
 		return;
 	}
 	if (getEnergyPoints() == 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no energy left!" << std::endl;
+		std::cout << getName() << " has no energy left!" << std::endl;
 		return;
 	}
 	_energyPoints--;
-	std::cout << YELLOW << "Claptrap " << getName() << " attacks " << target << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
+	std::cout << YELLOW << getName() << " attacks " << target << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
 }
 
 void	Claptrap::attack(Claptrap& target)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no HP left!" << std::endl;
+		std::cout << getName() << " has no HP left!" << std::endl;
 		return;
 	}
 	if (getEnergyPoints() == 0)
 	{
-		std::cout << "Claptrap " << getName() << " has no energy left!" << std::endl;
+		std::cout << getName() << " has no energy left!" << std::endl;
 		return;
 	}
 	_energyPoints--;
-	std::cout << YELLOW << "Claptrap " << getName() << " attacks " << target.getName() << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
+	std::cout << YELLOW << getName() << " attacks " << target.getName() << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
 	target.takeDamage(getAttackDamage());
 }

@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 11:05:21 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:28:04 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/06/20 11:28:13 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/06/20 11:41:26 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "DiamondTrap.hpp"
 
-# include	 "ClapTrap.hpp"
-# define 	F_HP 100
-# define 	F_EP 100
-# define 	F_AD 30
-# define 	PINK "\033[35m"
-
-class Fragtrap : public Claptrap
+DiamondTrap::DiamondTrap(std::string name) : Claptrap(name + "_clap_name"), Scavtrap(name), Fragtrap(name)
 {
-	public:
-		Fragtrap(std::string name);
-		Fragtrap(const Fragtrap& src);
-		Fragtrap &	operator=(const Fragtrap& rhs);
-		~Fragtrap(void);
-		void		highFivesGuys(void);
-};
-
-#endif
+	this->_name = name;
+	this->_hitPoints = F_HP;
+	this->_energyPoints = S_EP;
+	this->_attackDamage = F_AD;
+	std::cout << CYAN << "DiamondTrap constructor called" << std::endl;
+}
