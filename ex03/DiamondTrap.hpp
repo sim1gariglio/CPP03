@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:26:05 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:29:38 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 12:32:45 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class DiamondTrap : public Scavtrap, public Fragtrap
 		DiamondTrap &	operator=(const DiamondTrap& rhs);
 		~DiamondTrap(void);
 		void	whoAmI(void);
+		using	Scavtrap::attack;
 	private:
 		std::string	_name;
 };
