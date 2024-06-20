@@ -6,32 +6,20 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:33 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 10:55:49 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:01:38 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	Claptrap claptrap("Simone");
-	Claptrap claptrap2("sgarigli");
-	
-	claptrap.attack(claptrap2);
-	claptrap2.attack("Simone");
-	//claptrap2.takeDamage(3);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
-	claptrap2.beRepaired(5);
+	Claptrap claptrap("sgarigli");
+	Scavtrap scavtrap("gduranti");
+
+	claptrap.attack(scavtrap);
+	scavtrap.attack(claptrap);
+	scavtrap.guardGate();
 	return 0;
 }

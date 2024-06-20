@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:37 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 10:54:52 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:14:18 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Claptrap::Claptrap(std::string name) : _name(name)
 	this->_energyPoints = EP;
 	this->_attackDamage = AD;
 	std::cout << "Claptrap " << _name << " has been created!" << std::endl;
-	std::cout << name << " has " << getHitPoints() << " hit points, " << getEnergyPoints() << " energy points and " << getAttackDamage() << " attack damage." << std::endl;
 }
 
 Claptrap::Claptrap(const Claptrap& src)
