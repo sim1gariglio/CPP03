@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 10:22:26 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:02:09 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:47:14 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Scavtrap : public Claptrap
 		Scavtrap &	operator=(const Scavtrap& rhs);
 		~Scavtrap(void);
 		void		guardGate(void);
+		void		attack(std::string const & target);
+		void		attack(Claptrap& target);
 };
 
 #endif

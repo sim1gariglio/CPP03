@@ -6,17 +6,19 @@
 #    By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 09:14:44 by sgarigli          #+#    #+#              #
-#    Updated: 2024/06/20 12:05:58 by sgarigli         ###   ########.fr        #
+#    Updated: 2024/06/20 11:03:30 by sgarigli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = compiled
+NAME = Frag
 
 SRC = main.cpp \
-	ClapTrap.cpp
+	ClapTrap.cpp \
+	ScavTrap.cpp \
+	FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

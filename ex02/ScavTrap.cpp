@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 10:22:28 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:15:27 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:59:59 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,27 @@ Scavtrap::~Scavtrap(void)
 
 void		Scavtrap::guardGate(void)
 {
-	std::cout << BLUE << "Scavtrap " << _name << " has entered in Gate keeper mode." << RESET << std::endl;
+	std::cout << BLUE << _name << " has entered in Gate keeper mode." << RESET << std::endl;
+}
+
+void		Scavtrap::attack(std::string const & target)
+{
+	std::cout << YELLOW << _name << " attacks like a Scavtrap " << target << ", causing " << _attackDamage << " points of damage!" << RESET << std::endl;
+}
+
+void	Scavtrap::attack(Claptrap& target)
+{
+	if (getHitPoints() <= 0)
+	{
+		std::cout << getName() << " has no HP left!" << std::endl;
+		return;
+	}
+	if (getEnergyPoints() == 0)
+	{
+		std::cout << getName() << " has no energy left!" << std::endl;
+		return;
+	}
+	_energyPoints--;
+	std::cout << YELLOW << getName() << " attacks like a Scavtrap " << target.getName() << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
+	target.takeDamage(getAttackDamage());
 }
