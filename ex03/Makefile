@@ -6,12 +6,12 @@
 #    By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 09:14:44 by sgarigli          #+#    #+#              #
-#    Updated: 2024/06/20 12:19:33 by sgarigli         ###   ########.fr        #
+#    Updated: 2024/09/10 12:30:54 by sgarigli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 NAME = Diamond
 

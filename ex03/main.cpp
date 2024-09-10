@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:33 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 12:20:02 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:18:37 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 int main()
 {
-	Claptrap claptrap("sgarigli");
-	Scavtrap scavtrap("gduranti");
-	Fragtrap fragtrap("mruggier");
-	DiamondTrap diamondtrap("lmicheli");
+	Claptrap sgarigli("sgarigli");
+	ScavTrap gduranti("gduranti");
+	FragTrap mruggier("mruggier");
+	DiamondTrap lmicheli("lmicheli");
 
-	claptrap.attack(scavtrap);
-	scavtrap.attack(claptrap);
-	scavtrap.guardGate();
-	fragtrap.highFivesGuys();
-	
+	sgarigli.attack("gduranti");
+	gduranti.attack("mruggier");
+	gduranti.guardGate();
+	mruggier.highFivesGuys();
+	lmicheli.whoAmI();
+
 	return 0;
 }

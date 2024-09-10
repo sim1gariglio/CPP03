@@ -6,11 +6,20 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:37 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:58:00 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:21:48 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+Claptrap::Claptrap(void)
+{
+	this->_name = "Claptrap";
+	this->_hitPoints = HP;
+	this->_energyPoints = EP;
+	this->_attackDamage = AD;
+	std::cout << "Claptrap default constructor has been called!" << std::endl;
+}
 
 Claptrap::Claptrap(std::string name) : _name(name)
 {
@@ -110,21 +119,4 @@ void Claptrap::attack(std::string const & target)
 	}
 	_energyPoints--;
 	std::cout << YELLOW << getName() << " attacks " << target << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
-}
-
-void	Claptrap::attack(Claptrap& target)
-{
-	if (getHitPoints() <= 0)
-	{
-		std::cout << getName() << " has no HP left!" << std::endl;
-		return;
-	}
-	if (getEnergyPoints() == 0)
-	{
-		std::cout << getName() << " has no energy left!" << std::endl;
-		return;
-	}
-	_energyPoints--;
-	std::cout << YELLOW << getName() << " attacks " << target.getName() << " causing " << getAttackDamage() << " points of damage!" <<  RESET <<std::endl;
-	target.takeDamage(getAttackDamage());
 }

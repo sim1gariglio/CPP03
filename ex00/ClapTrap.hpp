@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:15:35 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 10:54:10 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:58:11 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 class Claptrap
 {
 	public:
+		Claptrap();
 		Claptrap(std::string name);
 		Claptrap(const Claptrap& src);
 		Claptrap &	operator=(const Claptrap& rhs);
@@ -34,7 +35,6 @@ class Claptrap
 		unsigned int 		getAttackDamage(void) const;
 		std::string			getName(void) const;
 		void				attack(std::string const & target);
-		void				attack(Claptrap& target);
 		void				takeDamage(const unsigned int amount);
 		void				beRepaired(const unsigned int amount);
 

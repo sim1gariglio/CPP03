@@ -6,14 +6,14 @@
 #    By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/20 09:14:44 by sgarigli          #+#    #+#              #
-#    Updated: 2024/06/20 12:05:58 by sgarigli         ###   ########.fr        #
+#    Updated: 2024/09/10 10:07:51 by sgarigli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = compiled
+NAME = Clap
 
 SRC = main.cpp \
 	ClapTrap.cpp
