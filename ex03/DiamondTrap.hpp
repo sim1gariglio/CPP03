@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:26:05 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 12:32:45 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:18:37 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include 	"FragTrap.hpp"
 # define 	CYAN "\033[36m"
 
-class DiamondTrap : public Scavtrap, public Fragtrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
 		DiamondTrap(std::string name);
@@ -25,7 +25,7 @@ class DiamondTrap : public Scavtrap, public Fragtrap
 		DiamondTrap &	operator=(const DiamondTrap& rhs);
 		~DiamondTrap(void);
 		void	whoAmI(void);
-		using	Scavtrap::attack;
+		using	ScavTrap::attack;
 	private:
 		std::string	_name;
 };

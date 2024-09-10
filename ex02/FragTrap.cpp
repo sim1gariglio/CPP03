@@ -6,29 +6,38 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:05:24 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/06/20 11:51:04 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:30:15 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-Fragtrap::Fragtrap(std::string name) : Claptrap(name)
+FragTrap::FragTrap(void) : Claptrap()
 {
-	this->_hitPoints = F_HP;
+	this->_name = "FragTrap";
+	this->_hitPoints = Claptrap::getHitPoints();
 	this->_energyPoints = F_EP;
 	this->_attackDamage = F_AD;
-	std::cout << name << " has been created!" << std::endl;
+	std::cout << "FragTrap default constructor has been called!" << std::endl;
 }
 
-Fragtrap::Fragtrap(const Fragtrap& src) : Claptrap(src)
+FragTrap::FragTrap(std::string name) : Claptrap(name)
+{
+	this->_hitPoints = Claptrap::getHitPoints();
+	this->_energyPoints = F_EP;
+	this->_attackDamage = F_AD;
+	std::cout << "FragTrap " << getName() << " has been created!" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& src) : Claptrap(src)
 {
 	*this = src;
-	std::cout << getName() << " has been created!" << std::endl;
+	std::cout << "FragTrap " << getName() << " has been created!" << std::endl;
 }
 
-Fragtrap &	Fragtrap::operator=(const Fragtrap& rhs)
+FragTrap &	FragTrap::operator=(const FragTrap& rhs)
 {
-	std::cout << "Fragtrap assignation operator called" << std::endl;
+	std::cout << "FragTrap assignation operator called" << std::endl;
 	if (this != &rhs)
 	{
 		_name = rhs._name;
@@ -39,12 +48,12 @@ Fragtrap &	Fragtrap::operator=(const Fragtrap& rhs)
 	return *this;
 }
 
-Fragtrap::~Fragtrap(void)
+FragTrap::~FragTrap(void)
 {
-	std::cout << getName() << " has been destroyed!" << std::endl;
+	std::cout << "FragTrap " << getName() << " has been destroyed!" << std::endl;
 }
 
-void		Fragtrap::highFivesGuys(void)
+void		FragTrap::highFivesGuys(void)
 {
-	std::cout << PINK << getName() << " is asking for a high five!🙌" << RESET << std::endl;
+	std::cout << PINK << getName() << " high fives guys!" << RESET << std::endl;
 }
